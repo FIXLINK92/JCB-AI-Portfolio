@@ -1,86 +1,91 @@
 # Luxorium / JCB Control Plane
 
-## Overview
+## Executive Summary
 
-Luxorium / JCB Control Plane is a multi-company administration and licensing platform designed around **owner-controlled activation**. The platform separates commercial authority from company administration: the owner creates and activates a company, defines limits, and issues secure activation/invitation flows; company administrators operate only within those approved limits.
+Luxorium / JCB Control Plane is a multi-company administration, licensing and access-control platform. Its defining rule is **owner-controlled activation**: commercial authority stays with the owner, while company administrators operate only inside explicitly granted limits.
+
+This project is the strongest full-stack example in this portfolio because it combines UI, backend API, PostgreSQL persistence, authentication/session controls, role boundaries and automated validation.
 
 ## Business Problem
 
-A SaaS-style product serving multiple companies needs more than login screens. It needs clear authority boundaries around:
+A multi-company platform needs more than authentication. It must prevent tenant administrators from silently changing commercial entitlements or security-sensitive limits.
 
-- company activation
-- user and device limits
-- license term and expiry
-- application/module entitlement
-- administrative roles
-- security-sensitive changes
-- auditability
+The platform therefore separates:
 
-The objective is to prevent tenant administrators from silently increasing commercial limits or bypassing owner governance.
+- company creation and activation,
+- user/device/application limits,
+- licensing term and expiry,
+- tenant administration,
+- owner-only commercial authority,
+- high-risk security actions,
+- persistent audit-oriented records.
 
 ## My Role
 
-- Product owner and system decision owner
-- Defined the activation and commercial-control model
-- Directed frontend and backend implementation through milestone-gated AI-assisted development
-- Reviewed architecture, test evidence, security controls, and handoff criteria
-- Kept production-impacting decisions under explicit owner approval
+- Founder / product owner / interim technical decision owner
+- Defined the owner-controlled activation model
+- Directed milestone-gated AI-assisted implementation
+- Reviewed architecture and validation evidence before milestone acceptance
+- Defined security/session decisions and commercial authority boundaries
 
-## Architecture / Technologies
+## Selected Architecture
 
-- TypeScript
-- NestJS backend API
-- PostgreSQL
-- Database migrations
-- WebAuthn/passkeys foundation
-- MFA/session controls
-- REST API architecture
-- Frontend automated tests
-- Playwright end-to-end testing
-- GitHub-based version control and CI practices
+- **Frontend:** multi-section administrative UI
+- **Backend:** NestJS / TypeScript REST API
+- **Persistence:** PostgreSQL + migration framework
+- **Authentication:** WebAuthn/passkey foundation, MFA/session controls
+- **Validation:** unit, integration and Playwright E2E testing
+- **Governance:** milestone gates and owner review before baseline approval
 
-## Security Model
+Architecture: [`../architecture/luxorium-control-plane.md`](../architecture/luxorium-control-plane.md)
 
-Selected security decisions include:
+## Security Decisions Represented
 
-- passkeys mandatory for the owner role
-- passkey + MFA support for administrative roles
-- password + TOTP treated as transitional where applicable
-- privileged-session idle limits
-- absolute session limits
-- fresh-factor authentication for high-risk actions
-- audit-oriented persistence and role separation
+- mandatory passkey direction for the owner role,
+- passkey + MFA direction for administrators,
+- password + TOTP treated as transitional where applicable,
+- privileged idle-session limits,
+- absolute-session limits,
+- fresh-factor requirement for selected high-risk actions,
+- database-backed organization/user/membership/audit foundations.
 
-## Validation Evidence
+## Validation Evidence Recorded During Development
 
-Current validated foundations include:
+Selected validated milestone evidence includes:
 
-- frontend baseline with navigation, company master areas, notifications/settings concepts, licensing views, and agreement placeholders
-- backend API foundation with automated unit/integration validation
-- PostgreSQL schema foundation covering organization, user, membership, and audit-oriented structures
-- authentication/session foundation under dedicated milestone review
+- frontend baseline with automated unit and Playwright coverage,
+- NestJS backend API foundation with unit/integration validation,
+- PostgreSQL core schema/migration foundation,
+- organization/user/membership/audit persistence structures,
+- authentication/session foundation progressed under a dedicated milestone.
 
-The private production repository is intentionally not exposed through this portfolio.
+Exact production source and private implementation details are intentionally excluded from this portfolio.
 
-## What This Project Demonstrates
+## What I Would Demonstrate Live
 
-- full-stack system decomposition
-- access-control design
-- multi-tenant thinking
-- authentication and session-security concepts
-- PostgreSQL schema/migration discipline
-- API foundation design
-- automated testing
-- milestone-based technical governance
+1. Navigate the company control surface.
+2. Explain the owner vs. company-admin authority boundary.
+3. Show a license/limit flow and why the admin cannot increase commercial limits.
+4. Show test evidence and explain how a change is accepted.
+5. Trace one request conceptually from UI → API → authorization → persistence → audit.
 
-## Portfolio Evidence
+## What This Demonstrates for an AI / Full-Stack Role
 
-Recommended screenshots:
+- practical system decomposition,
+- Node.js/TypeScript backend work,
+- REST API thinking,
+- relational data modelling and migrations,
+- authentication/session architecture,
+- browser automation/testing,
+- security-first product decisions,
+- AI-assisted implementation under human-controlled acceptance.
+
+## Portfolio Evidence To Add
+
+Use sanitized development data only:
 
 - `screenshots/luxorium-01-dashboard.png`
 - `screenshots/luxorium-02-company-master.png`
 - `screenshots/luxorium-03-licenses.png`
 - `screenshots/luxorium-04-auth-flow.png`
 - `screenshots/luxorium-05-test-evidence.png`
-
-Architecture: [`../architecture/luxorium-control-plane.md`](../architecture/luxorium-control-plane.md)

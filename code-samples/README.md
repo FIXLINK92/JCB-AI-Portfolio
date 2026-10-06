@@ -1,23 +1,14 @@
-# Code Samples Policy
+# Safe Code Samples
 
-Production source code is intentionally excluded from this portfolio.
+These files are **synthetic portfolio examples** written specifically for external evaluation. They demonstrate implementation patterns without copying proprietary production source.
 
-Only add a code sample when all of the following are true:
+## Included
 
-1. It contains no secrets, credentials, customer data, or proprietary business logic.
-2. You own the code or have clear permission to publish it.
-3. The sample is understandable without the private repository.
-4. Publishing it does not weaken the security of a live system.
-5. The README states whether the sample is production-derived, simplified, or written specifically for demonstration.
+- [`python/data_quality_demo.py`](python/data_quality_demo.py) — deterministic normalization, duplicate detection and validation using only the Python standard library.
+- [`typescript/authorization-policy.example.ts`](typescript/authorization-policy.example.ts) — owner/admin authorization boundary example.
+- [`sql/001_demo_audit_schema.sql`](sql/001_demo_audit_schema.sql) — small relational/audit schema example.
+- [`playwright/smoke.example.spec.ts`](playwright/smoke.example.spec.ts) — browser smoke-test pattern.
 
-## Good Portfolio Samples
+## Important
 
-Examples that can be added later after review:
-
-- a small generic NestJS validation/health endpoint
-- a generic authorization guard pattern
-- a synthetic PostgreSQL migration example
-- a Playwright test against a demo page
-- a Python data-quality function using synthetic rows
-
-Do **not** represent newly invented demonstration code as production code previously used in a project.
+These examples are deliberately small. They are not presented as copied production code and do not expose credentials, customer data, private business rules or live-system security details.

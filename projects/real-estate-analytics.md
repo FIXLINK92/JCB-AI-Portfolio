@@ -1,90 +1,108 @@
 # UAE Real Estate Analytics Platform
 
-## Overview
+## Executive Summary
 
-This project is an analyst-oriented real-estate decision platform for UAE property analysis. The guiding principle is simple: **AI is not the source of truth**. Data must be sourced, normalized, quality-checked, and traceable before it is used to support an investment conclusion.
+This project is an analyst-oriented UAE real-estate decision platform. Its governing principle is: **AI is not the source of truth**. Data must be sourced, preserved, normalized, quality-checked and traceable before it supports an investment conclusion.
 
 ## Business Problem
 
-Property decisions often combine listing data, transactions, rents, fees, financing, and assumptions from multiple sources. Without evidence lineage and quality controls, automated analysis can produce convincing but unreliable conclusions.
+Property analysis combines transactions, listings, rent expectations, fees, financing assumptions and comparables. When these inputs are mixed without evidence lineage, automation can produce confident but unreliable outputs.
 
-The platform is designed to structure that work into a repeatable analyst workflow.
+The platform structures that work into a controlled analytical workflow.
 
 ## My Role
 
 - Product owner and analyst-workflow designer
-- Defined evidence/QC requirements
-- Directed dashboard and calculation implementation
-- Defined approval-state logic and report expectations
-- Tested decision scenarios and output behavior
+- Defined evidence/QC rules and approval-state logic
+- Directed dashboard, calculation and export implementation
+- Tested scenarios and regression behavior
+- Required unverified external data to remain disabled rather than silently displayed as fact
 
-## Core Capabilities
+## Analytical Pipeline
 
-- controlled data imports
-- immutable/raw-data preservation concepts
-- normalization and duplicate detection
-- evidence registers
-- comparable-property analysis
-- market trends
-- investment calculations
-- cash and mortgage scenarios
-- case history and approvals
-- Excel/XLSX and PDF exports
-- decision/report workflow controls
+```mermaid
+flowchart LR
+    S[Approved/manual sources] --> R[Immutable RAW]
+    R --> N[Normalize]
+    N --> Q[QC / deduplicate]
+    Q --> E[Evidence register]
+    Q --> A[Market + investment analysis]
+    E --> A
+    A --> H[Analyst review]
+    H --> X[XLSX / PDF output]
+```
 
-## Selected Financial Analysis
+## Capabilities
 
-The analytical model supports metrics such as:
+- controlled data imports,
+- raw-data preservation concepts,
+- normalization and duplicate detection,
+- evidence registers,
+- comparable-property analysis,
+- trend views,
+- cash/mortgage scenarios,
+- case history and approval states,
+- XLSX and PDF exports,
+- regression/scenario testing.
 
-- gross rental yield
-- NOI-oriented analysis
-- cash-flow scenarios
-- DSCR
-- investment return comparisons
-- off-plan paid capital vs remaining liability
-- comparable AED/sq ft analysis
+## Selected Metrics
 
-## Architecture / Technologies
+The analytical model includes work around:
+
+- gross rental yield,
+- NOI,
+- DSCR,
+- cash-flow scenarios,
+- off-plan paid capital vs. remaining liability,
+- comparable AED/sq ft analysis,
+- investment-return comparisons.
+
+## Technology
 
 - Python
-- Dash-based local analytical UI
+- Dash analytical UI
 - SQLite case history
-- structured import/normalization pipeline
+- structured normalization/QC pipeline
 - XLSX export
 - PDF report generation
-- scenario/regression testing
 
-## Governance Model
+Architecture: [`../architecture/real-estate-analytics.md`](../architecture/real-estate-analytics.md)
 
-A broader decision package separates:
+## Governance Boundary
+
+The broader decision package separates:
 
 1. Market Analysis
 2. Investment Analysis
 3. Certified Valuation
 4. Legal Due Diligence
 
-The software assists analysis; it does not replace licensed valuation or legal review.
+The software assists analysis; it does not claim to replace licensed valuation or legal review.
 
-## What This Project Demonstrates
+## What I Would Demonstrate Live
 
-- Python analytics
-- data quality controls
-- evidence lineage
-- calculation engines
-- dashboard/UI iteration
-- analytical reporting
-- export workflows
-- scenario testing
-- responsible use of AI in data-driven decisions
+1. Input/import path.
+2. QC and evidence handling.
+3. Comparable analysis.
+4. Investment calculations.
+5. Case history/approval concepts.
+6. XLSX/PDF output.
 
-## Portfolio Evidence
+## What This Demonstrates
 
-Recommended screenshots:
+- Python analytics,
+- data engineering/QC thinking,
+- evidence lineage,
+- deterministic calculations,
+- analytical dashboard iteration,
+- report generation,
+- scenario/regression validation,
+- responsible AI boundaries.
+
+## Portfolio Evidence To Add
 
 - `screenshots/realestate-01-dashboard.png`
 - `screenshots/realestate-02-market-data.png`
 - `screenshots/realestate-03-comparables.png`
 - `screenshots/realestate-04-investment-analysis.png`
 - `screenshots/realestate-05-report-export.png`
-
-Architecture: [`../architecture/real-estate-analytics.md`](../architecture/real-estate-analytics.md)

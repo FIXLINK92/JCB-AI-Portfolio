@@ -1,99 +1,104 @@
 # TAG Armored Vehicle QC
 
-## Overview
+## Executive Summary
 
-TAG Armored Vehicle QC is a private, offline-first Android quality-control system for armored-vehicle inspection workflows. It is designed around controlled inspection progression, photographic evidence, signatures, recheck/backjob handling, and a review chain of **Inspector → QCM → QAM**.
+TAG Armored Vehicle QC is a private, offline-first Android quality-control system designed to digitize a complex armored-vehicle inspection workflow. It replaces paper-heavy inspection handling with structured checklists, evidence capture, signatures, recheck/rework loops and controlled approvals across **Inspector → QCM → QAM**.
 
 ## Business Problem
 
-Paper-heavy vehicle quality-control processes create avoidable risks:
+The source process contains a large inspection surface with staged vehicle progression, PDI/FIR checklists, fields, photo evidence and review states. Paper-based execution can create:
 
-- lost or incomplete inspection evidence
-- inconsistent checklist execution
-- difficult traceability across rework/recheck cycles
-- manual photo handling
-- weak revision history
-- slow final-report preparation
-
-The project digitizes the workflow while preserving auditability and controlled approvals.
+- missing evidence,
+- inconsistent checklist completion,
+- weak rework traceability,
+- manual photo handling,
+- difficult revision history,
+- slow final-report preparation.
 
 ## My Role
 
 - Product owner and workflow designer
-- Converted real inspection/PDI/FIR source material into structured digital requirements
-- Defined roles, approval states, recheck/backjob behavior, evidence capture, signing, and report expectations
+- Converted real inspection/PDI/FIR material into structured requirements
+- Defined roles, state transitions, evidence capture, signing and recheck behavior
 - Directed milestone-gated implementation and validation
-- Required offline-first operation and backend-enforced security
+- Required offline-first operation, encrypted storage direction and backend-enforced authorization
 
-## Workflow Scope
+## Workflow
 
-The source workflow contains a large structured inspection surface, including staged vehicle progression, PDI and FIR checklists, fields, evidence photos, and manager review.
-
-Core user flow:
-
-```text
-Inspector → Complete inspection → Sign/submit → QCM review → QAM review → Final approved record/report
-                         ↘ Recheck / Need rework ↙
+```mermaid
+flowchart LR
+    A[Inspector works offline] --> B[Checklist + fields + photos]
+    B --> C[Inspector sign / submit]
+    C --> D[QCM review]
+    D -->|Recheck / Rework| A
+    D -->|Accept| E[QAM review]
+    E -->|Approve| F[Final controlled record / report]
 ```
 
 ## Architecture / Technologies
 
-- Kotlin
-- Jetpack Compose
-- Room / encrypted local database strategy
-- SQLCipher-oriented encrypted storage design
-- CameraX for evidence capture
+- Kotlin / Jetpack Compose
+- Android tablet, landscape-first interaction
+- Room + encrypted local-storage direction
+- SQLCipher-oriented storage design
+- CameraX evidence capture
 - NestJS backend
 - PostgreSQL
 - Docker/private deployment direction
-- Android tablet landscape-first UI
 
-## Security / Record Controls
+Architecture: [`../architecture/armored-vehicle-qc.md`](../architecture/armored-vehicle-qc.md)
 
-Design requirements include:
+## Security / Record Design
 
-- encrypted local storage
-- immutable signed revisions
-- audit history
-- controlled synchronization
-- trusted-device concepts
-- OTP / authentication controls
-- backend-enforced authorization
-- private rather than public deployment
+Requirements include:
 
-## Validation Evidence
+- encrypted local storage,
+- immutable signed revision concepts,
+- audit history,
+- trusted-device controls,
+- OTP/authentication controls,
+- private synchronization,
+- backend-enforced authorization,
+- controlled final PDF/report generation.
 
-Validated milestone work has included:
+## Validation Evidence Recorded During Development
 
-- clean Android builds and debug APK generation
-- emulator-based Pixel Tablet/API 34 testing
-- backend migrations and automated backend tests
-- Android unit/lint/debug validation
-- Room instrumentation build validation
-- authentication/trusted-device hardening work
+Selected milestone evidence has included:
 
-The project remains milestone-gated; later production and company-pilot capabilities are not represented as complete until they have passed their respective gates.
+- clean Android builds and debug APK generation,
+- Pixel Tablet / Android API 34 emulator testing,
+- backend database migrations and automated tests,
+- Android unit/lint/debug validation,
+- Room instrumentation build validation,
+- authentication/trusted-device hardening work.
 
-## What This Project Demonstrates
+The project remains milestone-gated. Later company-pilot and hardened-production capabilities are **not** represented as complete until their gates are passed.
 
-- digitizing a complex paper workflow
-- Android application architecture
-- offline-first thinking
-- evidence/photo workflows
-- role-based approvals
-- security-conscious local storage
-- backend/API planning
-- immutable/auditable record concepts
-- test-driven milestone acceptance
+## What I Would Demonstrate Live
 
-## Portfolio Evidence
+1. Inspector dashboard and unit status.
+2. Structured checklist execution.
+3. Evidence/photo capture flow using synthetic test content.
+4. Sign/submit transition.
+5. QCM recheck/rework loop.
+6. Explain offline persistence and controlled synchronization.
 
-Recommended screenshots:
+## What This Demonstrates
+
+- complex workflow digitization,
+- mobile/offline-first architecture,
+- structured state machines,
+- role-based approvals,
+- evidence/photo workflows,
+- security-conscious local persistence,
+- backend/API integration planning,
+- audit/revision thinking,
+- milestone-based technical validation.
+
+## Portfolio Evidence To Add
 
 - `screenshots/tag-qc-01-inspector-dashboard.png`
 - `screenshots/tag-qc-02-unit-workflow.png`
 - `screenshots/tag-qc-03-checklist.png`
 - `screenshots/tag-qc-04-photo-evidence.png`
 - `screenshots/tag-qc-05-review-state.png`
-
-Architecture: [`../architecture/armored-vehicle-qc.md`](../architecture/armored-vehicle-qc.md)

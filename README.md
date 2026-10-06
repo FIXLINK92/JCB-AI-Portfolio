@@ -1,72 +1,79 @@
-# JCB AI Portfolio
+# JCB — AI-Assisted Full-Stack & Automation Portfolio
 
-**AI-assisted software development • workflow digitization • full-stack systems • automation • data analytics**
+**UAE-based builder focused on AI-assisted software delivery, workflow digitization, full-stack systems, automation, data quality, and controlled technical execution.**
 
-This repository is a recruiter-facing technical portfolio for **JCB**. It presents selected systems, architecture decisions, validation practices, and project evidence while intentionally excluding production secrets, customer data, credentials, and proprietary source repositories.
+This repository is a recruiter-facing portfolio for **JCB**. It presents selected project architecture, engineering decisions, validation evidence, and safe demonstration code while intentionally excluding private production repositories, customer data, credentials, secrets, and proprietary implementation details.
 
-> **Portfolio scope:** architecture, project summaries, screenshots, test evidence, selected non-sensitive implementation patterns, and demonstrations. Production repositories remain private.
+> **Working principle:** AI accelerates implementation. Architecture, deterministic controls, automated verification, security checks, and human approval govern what gets accepted and released.
 
-## Featured Projects
+## Featured Work
 
-| Project | Focus | Selected Technologies | Status represented here |
+| Project | Problem solved | Engineering focus | Portfolio status |
 |---|---|---|---|
-| [Luxorium / JCB Control Plane](projects/luxorium-control-plane.md) | Multi-company control plane, access control, licensing, authentication | TypeScript, NestJS, PostgreSQL, WebAuthn/passkeys, Playwright, GitHub Actions | Active development; frontend and backend foundations validated |
-| [TAG Armored Vehicle QC](projects/armored-vehicle-qc.md) | Offline-first armored-vehicle quality-control workflow | Kotlin, Jetpack Compose, Room/SQLCipher, NestJS, PostgreSQL, CameraX, Docker | Milestone-gated development; security/auth foundations validated |
-| [UAE Real Estate Analytics](projects/real-estate-analytics.md) | Evidence-backed property and investment analysis | Python, Dash, SQLite, Excel/PDF reporting, data QC pipelines | Analyst workflow and report/export capabilities validated locally |
-| [AI-HQ](projects/ai-hq.md) | AI development control plane and governed agent/tooling experimentation | GitHub Actions, Docker, Python/TypeScript tooling, CI, MCP/tool integrations | Active R&D and development infrastructure |
+| [Luxorium / JCB Control Plane](projects/luxorium-control-plane.md) | Multi-company activation, licensing, access control and security | TypeScript, NestJS, PostgreSQL, WebAuthn/passkeys, sessions, Playwright | Active development; validated frontend/API/database foundations |
+| [TAG Armored Vehicle QC](projects/armored-vehicle-qc.md) | Replace paper-heavy vehicle inspection with an auditable offline-first workflow | Kotlin, Jetpack Compose, encrypted local storage design, NestJS, PostgreSQL, CameraX | Milestone-gated; mobile/security/backend foundations validated |
+| [UAE Real Estate Analytics](projects/real-estate-analytics.md) | Evidence-backed property and investment analysis | Python, Dash, SQLite, QC pipelines, XLSX/PDF reporting | Analyst workflow, calculations and exports validated locally |
+| [AI-HQ](projects/ai-hq.md) | Governed AI-assisted engineering and reusable development controls | GitHub Actions, Docker, CI runners, Python/TypeScript tooling, agent/tool integration | Active R&D/development infrastructure |
 
-## What I Build
+## What I Can Demonstrate
 
-I use AI-assisted development to accelerate implementation, but I do **not** treat generated code as automatically correct. My projects use scoped requirements, explicit architecture, milestone gates, automated tests, security controls, and human review before release.
+- Full-stack system decomposition: frontend → API → database → authentication → audit/control layers
+- REST API and backend-service concepts using Node.js/TypeScript/NestJS
+- PostgreSQL and SQLite data modelling, migrations, persistence and evidence lineage
+- Authentication and authorization concepts: passkeys, MFA, sessions, role boundaries and high-risk action controls
+- Browser/system validation with Playwright-style automated testing
+- Python analytics, data normalization, duplicate detection, QC and report generation
+- Offline-first mobile workflow design with evidence capture and approval/rework states
+- Docker/local development, Git/GitHub workflows and CI validation
+- DNS/domain/server troubleshooting concepts and deployment preparation
+- AI-assisted implementation with explicit scope, acceptance criteria, tests and human review
 
-Typical work includes:
-
-- Full-stack application architecture and implementation
-- REST APIs and backend services
-- PostgreSQL / SQLite data models
-- Authentication, authorization, sessions, passkeys, MFA, and audit controls
-- Offline-first mobile workflows
-- Workflow automation and business-process digitization
-- Data ingestion, normalization, quality control, analytics, and reporting
-- CI/CD, GitHub Actions, Docker, local development environments
-- DNS/domain/server troubleshooting and deployment preparation
-- AI-assisted development workflows with governed human review
-
-## Development Method
+## Engineering Workflow
 
 ```mermaid
 flowchart LR
-    A[Business problem] --> B[Requirements & scope]
-    B --> C[Architecture]
+    A[Business problem] --> B[Scope & acceptance criteria]
+    B --> C[Architecture & risk controls]
     C --> D[AI-assisted implementation]
-    D --> E[Automated tests]
-    E --> F[Security / QC review]
-    F --> G[Human approval]
-    G --> H[Release or next milestone]
+    D --> E[Automated tests / validation]
+    E --> F[Security & QC review]
+    F --> G{Evidence sufficient?}
+    G -- No --> C
+    G -- Yes --> H[Human approval]
+    H --> I[Commit / merge / release gate]
 ```
 
-## Portfolio Safety
+## Recruiter Review Path
 
-This portfolio intentionally excludes:
+1. Read the [Recruiter Guide](RECRUITER_GUIDE.md) for a 5-minute review path.
+2. Review the [Skills & Evidence Matrix](SKILLS_EVIDENCE_MATRIX.md) for what is demonstrated vs. still developing.
+3. Open the four project case studies in [`projects/`](projects/).
+4. Open [`architecture/`](architecture/) for GitHub-rendered system diagrams.
+5. Review [`code-samples/`](code-samples/) for safe, synthetic implementation examples.
+6. Review [`screenshots/`](screenshots/) and [`demos/`](demos/) for evidence capture guidance.
 
-- API keys, tokens, passwords, `.env` files, and secrets
-- Customer or employer confidential information
-- Production databases and personal data
-- Complete proprietary application source code
-- Internal security details that would create unnecessary exposure
+## Integrity / Claim Boundaries
 
-## Review Guide
+This portfolio intentionally distinguishes between **demonstrated**, **designed**, and **still developing** capabilities. I do not claim production experience with a tool solely because AI can generate code for it. Where a technology is not yet demonstrated by working project evidence, I label it accordingly.
 
-1. Start with the four project case studies in [`projects/`](projects/).
-2. Open [`architecture/`](architecture/) for GitHub-rendered system diagrams.
-3. Review [`screenshots/`](screenshots/) for the evidence checklist and image naming convention.
-4. Review [`demos/`](demos/) for recommended short walkthroughs.
-5. Review [`code-samples/`](code-samples/) for the policy governing any public code examples.
+That matters to how I work: generated output is treated as a draft until it is tested, reviewed, and accepted against defined requirements.
 
-## Contact / Availability
+## Security & IP Boundary
 
-Available for AI-assisted full-stack development, workflow automation, business-process digitization, technical troubleshooting, and implementation-focused roles in the UAE.
+This portfolio excludes:
+
+- API keys, access tokens, passwords, `.env` values and private credentials
+- customer/employer confidential information and production databases
+- private infrastructure details that create unnecessary security exposure
+- complete proprietary source repositories
+- any code or content I do not have the right to publish
+
+See [SECURITY.md](SECURITY.md) and [NOTICE.md](NOTICE.md).
+
+## Availability
+
+Open to implementation-focused AI/full-stack/automation opportunities in the UAE where practical delivery, structured troubleshooting, rapid learning, and evidence-backed execution matter more than formal credentials alone.
 
 ---
 
-**Important:** This repository is an evaluation portfolio. Unless a file explicitly states otherwise, no license is granted to copy, redistribute, commercialize, or reuse the underlying project designs or proprietary systems.
+**Portfolio note:** This repository is for evaluation and demonstration. Unless a file explicitly states otherwise, no license is granted to copy, redistribute, commercialize, or reuse proprietary project designs or underlying private systems.

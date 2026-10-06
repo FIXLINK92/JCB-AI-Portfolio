@@ -1,21 +1,33 @@
-# Demo Guide
+# Recruiter Demo Plan
 
-Keep each recruiter demo short: approximately 45–90 seconds.
+A single **3–4 minute** screen recording is more useful than several long videos.
 
-## Suggested Demonstrations
+## Recommended Script
 
-### Luxorium
-Show: login/authentication surface → company record → license/limit view → user administration boundary.
+### 0:00–0:20 — Introduction
 
-### TAG Armored Vehicle QC
-Show: inspector dashboard → unit/checklist → evidence capture → submit → review/recheck state.
+"I'm JCB. I build software using AI-assisted development, but I use explicit architecture, tests and human review rather than accepting generated code blindly. I'll show three examples briefly."
 
-### Real Estate Analytics
-Show: import/input → QC/evidence → analysis dashboard → report/export.
+### 0:20–1:20 — Luxorium
 
-### AI-HQ
-Show: scoped task → repository change → automated checks/evidence → human approval concept.
+Show dashboard → company record → license/limit surface → explain owner/admin boundary → briefly show test evidence.
 
-## Safety
+### 1:20–2:15 — TAG QC
 
-Record only development/synthetic data. Do not expose secrets, customer information, production credentials, private email addresses, or proprietary source files.
+Show inspector dashboard → unit/checklist → evidence → review/recheck state. Explain offline-first requirement and controlled synchronization.
+
+### 2:15–3:05 — Real Estate Analytics
+
+Show data/QC → analysis → report/export. State that unverified data is not treated as source-of-truth.
+
+### 3:05–3:35 — AI-HQ / Development Method
+
+Show a safe CI/project-control artifact. Explain: scope → implementation → test → evidence → human approval.
+
+### 3:35–3:50 — Close
+
+"These repositories remain private because they contain proprietary implementation. This portfolio contains architecture and safe examples, and I can demonstrate the working systems live."
+
+## Recording Rules
+
+Use only development/synthetic data. Close email, chat and password-manager windows. Remove notifications. Never display `.env` files, access tokens, secrets, customer data or private API keys.

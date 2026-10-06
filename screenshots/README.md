@@ -1,38 +1,43 @@
 # Screenshot Evidence Guide
 
-Do not upload screenshots containing API keys, tokens, customer names, personal data, internal IP addresses, confidential vehicle/customer records, or production secrets.
+The portfolio structure is ready, but **real screenshots must come from the actual local projects**. Do not substitute generated mockups for engineering evidence.
 
-## Recommended Images
+Before capture, use synthetic/test records and remove or blur secrets, customer names, personal information, tokens, private email addresses, internal IPs and confidential production data.
 
-### Luxorium
-- `luxorium-01-dashboard.png`
-- `luxorium-02-company-master.png`
-- `luxorium-03-licenses.png`
-- `luxorium-04-auth-flow.png`
-- `luxorium-05-test-evidence.png`
+## Priority Capture Set
 
-### TAG Armored Vehicle QC
-- `tag-qc-01-inspector-dashboard.png`
-- `tag-qc-02-unit-workflow.png`
-- `tag-qc-03-checklist.png`
-- `tag-qc-04-photo-evidence.png`
-- `tag-qc-05-review-state.png`
+### 1. Luxorium — highest priority
 
-Use only synthetic/test vehicle information in portfolio screenshots.
+| File | Capture | What it proves |
+|---|---|---|
+| `luxorium-01-dashboard.png` | Main dashboard / navigation | working UI and product scope |
+| `luxorium-02-company-master.png` | Company master/record | multi-company administration |
+| `luxorium-03-licenses.png` | License/limits view | commercial-control model |
+| `luxorium-04-auth-flow.png` | safe auth/passkey surface | authentication work |
+| `luxorium-05-test-evidence.png` | terminal/test report with secrets removed | verification discipline |
 
-### Real Estate Analytics
-- `realestate-01-dashboard.png`
-- `realestate-02-market-data.png`
-- `realestate-03-comparables.png`
-- `realestate-04-investment-analysis.png`
-- `realestate-05-report-export.png`
+### 2. TAG QC
 
-Use synthetic data or information already cleared for public use.
+| File | Capture | What it proves |
+|---|---|---|
+| `tag-qc-01-inspector-dashboard.png` | inspector dashboard | tablet workflow |
+| `tag-qc-02-unit-workflow.png` | unit/stage status | workflow/state tracking |
+| `tag-qc-03-checklist.png` | synthetic checklist | structured inspection |
+| `tag-qc-04-photo-evidence.png` | synthetic evidence flow | Camera/evidence design |
+| `tag-qc-05-review-state.png` | recheck/rework view | controlled review loop |
 
-### AI-HQ
-- `ai-hq-01-ci.png`
-- `ai-hq-02-runner.png`
-- `ai-hq-03-project-controls.png`
-- `ai-hq-04-validation.png`
+### 3. Real Estate Analytics
 
-Blur repository secrets, tokens, machine-specific credentials, and private infrastructure details.
+Capture dashboard, Market Data/QC, comparables, investment-analysis and export/report views using only safe or synthetic case data.
+
+### 4. AI-HQ
+
+Capture CI/runner/project-control/validation evidence. Never expose tokens, secrets, environment variables or private infrastructure credentials.
+
+## Capture Quality
+
+- Prefer 16:9 or clean application-window crops.
+- Keep Windows taskbar and unrelated applications out of frame where possible.
+- Use one consistent browser/app zoom level.
+- Do not add fake success indicators.
+- A terminal screenshot is useful only when commands and pass/fail evidence are readable.
